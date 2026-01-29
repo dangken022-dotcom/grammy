@@ -19,7 +19,6 @@ const Navbar: React.FC = () => {
     { name: 'ROOMS', path: '/rooms' },
     { name: 'GALLERY', path: '/gallery' },
     { name: 'LOCATION', path: '/location' },
-    { name: 'ADMIN', path: '/admin' },
   ];
 
   return (
@@ -34,7 +33,7 @@ const Navbar: React.FC = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`text-xs font-bold tracking-widest hover:opacity-50 transition-opacity ${location.pathname === item.path ? 'border-b-2 border-black' : ''} ${item.name === 'ADMIN' ? 'text-red-500' : ''}`}
+              className={`text-xs font-bold tracking-widest hover:opacity-50 transition-opacity ${location.pathname === item.path ? 'border-b-2 border-black' : ''}`}
             >
               {item.name}
             </Link>

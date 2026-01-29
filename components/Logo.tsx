@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface LogoProps {
   className?: string;
@@ -7,6 +7,32 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ className = "h-8", color = "currentColor" }) => {
+  const [customLogo, setCustomLogo] = useState<string | null>(null);
+
+  useEffect(() => {
+    // 로컬 스토리지에서 커스텀 로고 URL을 확인합니다.
+    const savedLogo = localStorage.getItem('grammy_custom_logo');
+    if (savedLogo) {
+      setCustomLogo(savedLogo);
+    }
+    
+    // 관리자 페이지에서 변경 시 실시간 감지를 위해 이벤트를 리슨할 수도 있지만, 
+    // 여기서는 단순함을 위해 마운트 시 체크합니다.
+  }, []);
+
+  if (customLogo) {
+    return (
+      <div className={`${className} flex items-center`}>
+        <img 
+          src={customLogo} 
+          alt="GRAMMY MUSIC STUDIO" 
+          className="h-full w-auto object-contain"
+          onError={() => setCustomLogo(null)} // 이미지 로드 실패 시 기본 로고로 전환
+        />
+      </div>
+    );
+  }
+
   return (
     <div className={`flex items-center gap-3 ${className}`} style={{ color }}>
       {/* Gramophone Icon SVG */}
