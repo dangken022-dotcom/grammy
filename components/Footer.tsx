@@ -6,10 +6,11 @@ import Logo from './Logo';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white text-black py-20 px-6 border-t-2 border-black">
+    <footer className="bg-white text-black py-24 px-6 border-t-2 border-black">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
-        <div className="space-y-8">
-          <Logo className="h-12 md:h-16 mb-8" />
+        <div className="space-y-12">
+          {/* 기존 h-12 md:h-16에서 3배 정도 키운 h-36 md:h-48 적용 */}
+          <Logo className="h-36 md:h-48 mb-8" />
           <p className="text-xl max-w-sm font-medium">인천 남동구 논고개로123번길 35, 칼리오페 빌딩 A동 617호</p>
         </div>
         <div className="grid grid-cols-2 gap-10">

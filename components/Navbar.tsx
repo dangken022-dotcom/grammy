@@ -22,10 +22,11 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-black/5 py-3' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-md border-b border-black/5 py-4' : 'bg-transparent py-10'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="hover:opacity-70 transition-opacity">
-          <Logo className="h-10 md:h-12" />
+          {/* 기존 h-10 md:h-12에서 3배 정도 키운 h-28 md:h-36 적용 */}
+          <Logo className="h-28 md:h-36" />
         </Link>
 
         <div className="hidden md:flex space-x-10 items-center">
@@ -38,7 +39,7 @@ const Navbar: React.FC = () => {
               {item.name}
             </Link>
           ))}
-          <Link to="/location" className="bg-yllw text-black border border-black px-6 py-2 text-xs font-black hover:invert transition-all">
+          <Link to="/location" className="bg-yllw text-black border border-black px-8 py-3 text-sm font-black hover:invert transition-all shadow-[4px_4px_0_rgba(0,0,0,1)]">
             BOOK NOW
           </Link>
         </div>
