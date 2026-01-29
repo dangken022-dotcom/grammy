@@ -1,0 +1,7 @@
+{
+  "name": "그래미스튜디오 - 프리미엄 음악 연습실",
+  "description": "인천 논현역 도보 1분 거리의 프리미엄 방음 음악 연습실 그래미스튜디오 공식 웹사이트입니다.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
